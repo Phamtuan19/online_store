@@ -23,7 +23,7 @@
       "baseUrl": ".",
       "paths": {
          // "@App/*": ["src/@App/*"],
-         // "@Core/*": ["src/@Core/*"]
+         "@Core/*": ["src/@core/*"]
       }
    },
    "include": ["src"],
