@@ -1,16 +1,6 @@
 import { AxiosInstance } from 'axios';
 import createInstance from '../axios';
 
-interface TypeRequestParams {
-   page_index: number;
-   page_size: number;
-   sort: string;
-}
-
-type TData = {
-   [key: string]: any; // Loại này có thể được điều chỉnh để phù hợp với cấu trúc dữ liệu thực tế của bạn
-};
-
 class BaseService {
    //
    BASE_URL: string = import.meta.env.VITE_BASE_URL + '/api';
@@ -69,7 +59,7 @@ class BaseService {
     * @param {Object} data
     * @returns
     */
-   create<C>(data: TData): Promise<C> {
+   create<C>(data: TDataBaseService): Promise<C> {
       return this.request.post(this.BASE_ENDPOINT, data);
    }
 
@@ -77,7 +67,7 @@ class BaseService {
     * @param {Object} data
     * @returns
     */
-   update<U>(data: TData, id?: string, method: 'put' | 'patch' = 'put'): Promise<U> {
+   update<U>(data: TDataBaseService, id?: string, method: 'put' | 'patch' = 'put'): Promise<U> {
       const updateId = id || data[this.PRIMARY_KEY];
       return this.request[method](`${this.BASE_ENDPOINT}/${updateId}`, data);
    }
@@ -86,7 +76,7 @@ class BaseService {
     * @param {Object} data
     * @returns
     */
-   save<S>(data: TData): Promise<S> {
+   save<S>(data: TDataBaseService): Promise<S> {
       // kiểm tra xem có id nếu có thì update còn chưa thì tạo mới
       if (data.hasOwnProperty(this.PRIMARY_KEY) && data[this.PRIMARY_KEY]) {
          return this.update(data);

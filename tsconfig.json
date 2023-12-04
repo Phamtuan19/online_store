@@ -23,7 +23,10 @@
       "baseUrl": ".",
       "paths": {
          // "@App/*": ["src/@App/*"],
-         "@Core/*": ["src/@core/*"]
+         "@Core/*": ["src/@core/*"],
+         "@Component/*": ["src/components/*"],
+         "@Hepler/*": ["src/heplers/*"],
+         "@Config/*": ["src/configs/*"]
       }
    },
    "include": ["src"],
