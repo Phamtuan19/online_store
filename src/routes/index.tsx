@@ -2,6 +2,9 @@ import { Outlet, RouteObject, useRoutes } from 'react-router-dom';
 import PublicRouter from './components/PublicRoute';
 import PrivateRouter from './components/PrivateRouter';
 import ROUTE_PATH from '@Config/route-config';
+import Loadable from './components/loadable';
+
+const Home = Loadable('common/Home');
 
 const routes = (): RouteObject[] => {
    return [
@@ -12,13 +15,13 @@ const routes = (): RouteObject[] => {
          path: '/',
          element: (
             <PrivateRouter>
-               <h1 className='text-sm'>Trang Home</h1>,
+               <Home />
             </PrivateRouter>
          ),
          children: [
             {
                index: true,
-               element: <h1>Trang Home</h1>,
+               element: <Home />,
             },
          ],
       },

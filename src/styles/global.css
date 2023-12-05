@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
 @layer base {
    :root {
       --background: 0 0% 100%;
@@ -50,16 +56,6 @@
       --input: 240 5.9% 90%;
       --ring: 142.1 76.2% 36.3%;
       --radius: 0.5rem;
-   }
-}
-
-@layer base {
-   * {
-      @apply border-border;
-   }
-
-   body {
-      @apply bg-background text-foreground;
    }
 }
 
