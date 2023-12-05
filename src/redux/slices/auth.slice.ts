@@ -2,9 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { RootState } from '../rootReducer';
 import { useDispatch, useSelector } from 'react-redux';
-// import { PageActionPropsType } from '@App/configs/page-action';
-// import MODULE_PAGE, { ModulePagePropsType } from '@App/configs/module-page';
-import authService from 'src/page/auth/service';
+import authService from '@Page/auth/service';
 
 const actionRefreshToken = createAsyncThunk('auth/refreshToken', async () => {
    console.log('refresh token');
@@ -19,15 +17,6 @@ const actionGetUser = createAsyncThunk('auth/getUser', async () => {
       throw new Error(error);
    }
 });
-
-const permission = {
-//    [MODULE_PAGE.DOASHBOARD]: ['view'],
-//    [MODULE_PAGE.PERSONNELS]: ['view', 'create', 'update', 'edit', 'show'],
-};
-
-// type UserPermission = {
-//    [key in ModulePagePropsType]?: PageActionPropsType[];
-// };
 
 interface InitialState<U> {
    user: Array<U> | null;
@@ -52,7 +41,7 @@ const authSlice = createSlice({
       actionLoginReducer: (state, action) => {
          const { role, ...user } = action.payload;
          state.user = user;
-         state.userPermission = permission;
+         state.userPermission = null;
          state.isInitialized = true;
          state.isAuhthentication = true;
       },
@@ -68,7 +57,7 @@ const authSlice = createSlice({
          .addCase(actionGetUser.fulfilled, (state, action) => {
             const { role, ...user } = action.payload;
             state.user = user;
-            state.userPermission = permission;
+            state.userPermission = null;
             state.isInitialized = true;
             state.isAuhthentication = true;
          })

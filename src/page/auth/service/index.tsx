@@ -1,4 +1,4 @@
-import BaseService from 'src/core/service';
+import BaseService from '@Core/service';
 import authPathUrl from './path-url';
 
 class AuthService extends BaseService {

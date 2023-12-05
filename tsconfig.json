@@ -23,10 +23,12 @@
       "baseUrl": ".",
       "paths": {
          // "@App/*": ["src/@App/*"],
-         "@Core/*": ["src/@core/*"],
+         "@Core/*": ["src/core/*"],
          "@Component/*": ["src/components/*"],
          "@Hepler/*": ["src/heplers/*"],
-         "@Config/*": ["src/configs/*"]
+         "@Config/*": ["src/configs/*"],
+         "@Redux/*": ["src/redux/*"],
+         "@Page/*": ["src/page/*"]
       }
    },
    "include": ["src"],

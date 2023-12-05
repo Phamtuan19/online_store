@@ -1,5 +1,5 @@
+import LazyLoadingScreen from '@Component/Loading/LazyLoadingScreen';
 import React, { lazy, Suspense } from 'react';
-// import LazyLoadingScreen from '@App/component/customs/LazyLoading/LazyLoadingScreen';
 
 type LoadableProps = JSX.IntrinsicAttributes;
 
@@ -15,7 +15,7 @@ function Loadable<P extends LoadableProps>(path: string) {
    const ComponentLazy = lazy(() => import(`../../pages/${newPath}`));
 
    const LoadableComponent: React.FC<P> = (props) => (
-      <Suspense fallback={<h1>Loading</h1>}>
+      <Suspense fallback={<LazyLoadingScreen />}>
          <ComponentLazy {...props} />
       </Suspense>
    );

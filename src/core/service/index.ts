@@ -1,8 +1,8 @@
 import { AxiosInstance } from 'axios';
 import createInstance from '../axios';
+import { AxiosResponseData } from '../axios/axios-type';
 
 class BaseService {
-   //
    BASE_URL: string = import.meta.env.VITE_BASE_URL + '/api';
 
    BASE_ENDPOINT: string = '';
@@ -37,7 +37,7 @@ class BaseService {
     * @param {Object} query
     * @returns
     */
-   get<G>(query?: TypeRequestParams | G): Promise<Array<G>> {
+   get(query?: TypeRequestParams): Promise<Array<AxiosResponseData>> {
       const params = {
          ...this.requestParams,
          ...query,
@@ -50,7 +50,7 @@ class BaseService {
     * @param {string} id
     * @returns
     */
-   find<F>(id: string): Promise<F> {
+   find(id: string): Promise<AxiosResponseData> {
       const url = `${this.BASE_ENDPOINT}/${id}`;
       return this.request.get(url);
    }
@@ -59,7 +59,7 @@ class BaseService {
     * @param {Object} data
     * @returns
     */
-   create<C>(data: TDataBaseService): Promise<C> {
+   create(data: TDataBaseService): Promise<AxiosResponseData> {
       return this.request.post(this.BASE_ENDPOINT, data);
    }
 
@@ -67,7 +67,7 @@ class BaseService {
     * @param {Object} data
     * @returns
     */
-   update<U>(data: TDataBaseService, id?: string, method: 'put' | 'patch' = 'put'): Promise<U> {
+   update(data: TDataBaseService, id?: string, method: 'put' | 'patch' = 'put'): Promise<AxiosResponseData> {
       const updateId = id || data[this.PRIMARY_KEY];
       return this.request[method](`${this.BASE_ENDPOINT}/${updateId}`, data);
    }
@@ -76,7 +76,7 @@ class BaseService {
     * @param {Object} data
     * @returns
     */
-   save<S>(data: TDataBaseService): Promise<S> {
+   save(data: TDataBaseService): Promise<AxiosResponseData> {
       // kiểm tra xem có id nếu có thì update còn chưa thì tạo mới
       if (data.hasOwnProperty(this.PRIMARY_KEY) && data[this.PRIMARY_KEY]) {
          return this.update(data);

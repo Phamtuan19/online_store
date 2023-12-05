@@ -1,5 +1,5 @@
 const authPathUrl = {
-   BASE: '',
+   BASE: 'auth',
    LOGIN: '',
    REGISTER: '',
    REFRESH_TOKEN: '',

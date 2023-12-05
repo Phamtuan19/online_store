@@ -1,5 +1,5 @@
+import { useAuth } from '@Redux/slices/auth.slice';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from 'src/redux/slices/auth.slice';
 
 function PublicRouter({ children }: { children?: React.ReactNode }) {
    const { isAuhthentication, isInitialized } = useAuth();
