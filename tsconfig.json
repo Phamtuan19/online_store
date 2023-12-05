@@ -28,7 +28,8 @@
          "@Hepler/*": ["src/heplers/*"],
          "@Config/*": ["src/configs/*"],
          "@Redux/*": ["src/redux/*"],
-         "@Page/*": ["src/page/*"]
+         "@Page/*": ["src/page/*"],
+         "@Hooks/*": ["src/hooks/*"]
       }
    },
    "include": ["src"],
