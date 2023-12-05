@@ -10,7 +10,7 @@ type LoadableProps = JSX.IntrinsicAttributes;
  *
  */
 
-function Loadable<P extends LoadableProps>(path: string) {
+function loadable<P extends LoadableProps>(path: string) {
    const newPath = path.split('.').includes('tsx') ? path + '.tsx' : path;
    const ComponentLazy = lazy(() => import(`../../page/${newPath}`));
 
@@ -23,4 +23,4 @@ function Loadable<P extends LoadableProps>(path: string) {
    return LoadableComponent;
 }
 
-export default Loadable;
+export default loadable;
