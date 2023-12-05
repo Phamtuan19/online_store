@@ -2,9 +2,9 @@ import { Outlet, RouteObject, useRoutes } from 'react-router-dom';
 import PublicRouter from './components/PublicRoute';
 import PrivateRouter from './components/PrivateRouter';
 import ROUTE_PATH from '@Config/route-config';
-import Loadable from '../core/helpers/utils/loadable';
+import loadable from '@Core/helpers/utils/loadable';
 
-const Home = Loadable('common/Home');
+const Home = loadable('common/Home');
 
 const routes = (): RouteObject[] => {
    return [
