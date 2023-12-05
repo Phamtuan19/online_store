@@ -13,7 +13,8 @@
       "format:fix": "prettier . --write",
       "type:check": "tsc",
       "prepare": "husky install",
-      "preview": "vite preview"
+      "preview": "vite preview",
+      "validate": "run-p lint type:check"
    },
    "dependencies": {
       "@reduxjs/toolkit": "^1.9.5",

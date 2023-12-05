@@ -1,4 +1,5 @@
 module.exports = {
-   '*.{js, jsx,ts,tsx}': ['eslint --quiet --fix'],
-   '*.{json,js,ts,jsx,tsx,html}': ['prettier --write'],
+   '*': () => 'pnpm format:fix',
+   '*.svg': () => 'pnpm format:svg',
+   '*.(js|jsx|ts|tsx)': () => 'pnpm validate',
 };
