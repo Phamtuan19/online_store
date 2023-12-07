@@ -1,4 +1,4 @@
-import { Outlet, RouteObject, useRoutes } from 'react-router-dom';
+import { RouteObject, useRoutes } from 'react-router-dom';
 import PublicRouter from './components/PublicRoute';
 import PrivateRouter from './components/PrivateRouter';
 import ROUTE_PATH from '@Config/route-config';

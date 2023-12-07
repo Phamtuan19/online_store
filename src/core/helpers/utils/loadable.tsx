@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import LazyLoadingScreen from '@Component/Loading/LazyLoadingScreen';
 import React, { lazy, Suspense } from 'react';
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable no-prototype-builtins */
 import { AxiosInstance } from 'axios';
 import createInstance from '../axios';
 import { AxiosResponseData } from '../axios/axios-type';
@@ -23,14 +25,14 @@ class BaseService {
       this.setRequest();
    }
 
-   setRequest() {
+   setRequest(): void {
       this.request = createInstance(this.BASE_URL);
 
       this.requestParams = {
          page_index: this.DEFAULT_PAGE,
          page_size: this.DEFAULT_LIMIT,
          sort: this.DEFAULT_SORT,
-      };
+      } as TypeRequestParams;
    }
 
    /**
@@ -68,7 +70,7 @@ class BaseService {
     * @returns
     */
    update(data: TDataBaseService, id?: string, method: 'put' | 'patch' = 'put'): Promise<AxiosResponseData> {
-      const updateId = id || data[this.PRIMARY_KEY];
+      const updateId: string = id || (data[this.PRIMARY_KEY] as string);
       return this.request[method](`${this.BASE_ENDPOINT}/${updateId}`, data);
    }
 

@@ -1,12 +1,12 @@
-import { useAuth } from '@Redux/slices/auth.slice';
-import { Navigate, Outlet } from 'react-router-dom';
+// import { useAuth } from '@Redux/slices/auth.slice';
+import { Outlet } from 'react-router-dom';
 
 function PublicRouter({ children }: { children?: React.ReactNode }) {
-   const { isAuhthentication, isInitialized } = useAuth();
+   // const { isAuhthentication, isInitialized } = useAuth();
 
-   if (isAuhthentication && isInitialized) {
-      return <Navigate to="/" />;
-   }
+   // if (isAuhthentication && isInitialized) {
+   //    return <Navigate to="/" />;
+   // }
 
    return children || <Outlet />;
 }
