@@ -2,7 +2,7 @@ module.exports = {
    root: true,
    env: { browser: true, es2020: true, node: true },
    extends: ['eslint:recommended', 'prettier'],
-   ignorePatterns: ['.eslintrc.cjs', '*.config.js', '*.config.ts', '*.slice.ts'],
+   ignorePatterns: ['.eslintrc.cjs', '*.config.js', '*.config.ts', '*.slice.ts', '*.config.cjs'],
 
    overrides: [
       {
@@ -45,8 +45,28 @@ module.exports = {
             ],
          },
       },
+      {
+         files: ['.eslintrc.cjs'],
+         rules: {
+            'prettier/prettier': 'off',
+         },
+      },
    ],
    rules: {
       'react-hooks/exhaustive-deps': 'warn',
+      'no-console': 'warn',
+      'no-unused-vars': 'warn',
+      'no-undef': 'error',
+      'no-extra-semi': 'error',
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
+      indent: ['error', 2],
+      'no-trailing-spaces': 'error',
+      'comma-dangle': ['error', 'never'],
+      'object-curly-spacing': ['error', 'always'],
+      'array-bracket-spacing': ['error', 'always'],
+      'arrow-spacing': 'error',
+      'no-multiple-empty-lines': ['error', { max: 1 }],
+      'eol-last': ['error', 'always'],
    },
 };
