@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 import { defineConfig, loadEnv } from 'vite';
 import { checker } from 'vite-plugin-checker';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import svgr from 'vite-plugin-svgr';
 import dynamicImport from 'vite-plugin-dynamic-import';
 
 // https://vitejs.dev/config/
@@ -11,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
    const env = loadEnv(mode, process.cwd(), '');
 
    return {
-      plugins: [checker({ typescript: false }), react(), dynamicImport(), tsconfigPaths()],
+      plugins: [checker({ typescript: false }), react(), dynamicImport(), svgr(), tsconfigPaths()],
       server: {
          port: 3000,
       },

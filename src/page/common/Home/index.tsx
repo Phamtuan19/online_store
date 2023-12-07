@@ -1,5 +1,14 @@
+import { SvgIcon } from '@Core/helpers';
+
 const Home = () => {
-   return <div className="">Trang home</div>;
+   return (
+      <>
+         <button>
+            hello
+            <SvgIcon name="react" />
+         </button>
+      </>
+   );
 };
 
 export default Home;

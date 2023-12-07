@@ -2,7 +2,7 @@ module.exports = {
    root: true,
    env: { browser: true, es2020: true, node: true },
    extends: ['eslint:recommended', 'prettier'],
-   ignorePatterns: ['.eslintrc.cjs', '*.config.js', '*.config.ts', '*.slice.ts', '*.config.cjs'],
+   ignorePatterns: ['.eslintrc.cjs', '*.config.js', '*.config.ts', '*.slice.ts', '*.config.cjs', 'additional.d.ts'],
 
    overrides: [
       {
