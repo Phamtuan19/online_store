@@ -14,7 +14,7 @@ export default defineConfig(({ command, mode }) => {
    return {
       plugins: [checker({ typescript: false }), react(), dynamicImport(), svgr(), tsconfigPaths()],
       server: {
-         port: 3000,
+         port: 5001,
       },
       resolve: {
          alias: {

@@ -1,4 +1,4 @@
-import { useSvgIcon } from '@Core/hooks/useSvgIcon';
+import { useSvgIcon } from '@Core/hooks';
 import { type ComponentProps } from 'react';
 
 type SvgIconProps = ComponentProps<'svg'> & {
