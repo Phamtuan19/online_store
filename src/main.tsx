@@ -8,12 +8,18 @@ import Routers from './routes';
 
 import './styles/global.css';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-   <React.StrictMode>
-      <Provider store={store}>
-         <BrowserRouter>
-            <Routers />
-         </BrowserRouter>
-      </Provider>
-   </React.StrictMode>,
-);
+const rootElement = document.getElementById('root');
+
+if (rootElement !== null) {
+   const root = ReactDOM.createRoot(rootElement);
+
+   root.render(
+      <React.StrictMode>
+         <Provider store={store}>
+            <BrowserRouter>
+               <Routers />
+            </BrowserRouter>
+         </Provider>
+      </React.StrictMode>,
+   );
+}
