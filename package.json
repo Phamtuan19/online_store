@@ -25,7 +25,6 @@
       "clsx": "^2.0.0",
       "combine-reducers": "^1.0.0",
       "date-fns": "^2.30.0",
-      "lodash": "^4.17.21",
       "postcss": "^8.4.32",
       "postcss-loader": "^7.3.3",
       "react": "^18.2.0",

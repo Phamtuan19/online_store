@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const HttpStatusCode = {
+export const HttpStatusCode = {
    CONTINUE: 100,
    /**
     * This code is sent in response to an Upgrade request header by the client, and indicates the protocol the server is switching too.
@@ -236,5 +236,3 @@ const HttpStatusCodeStrings = Object.values(HttpStatusCode).map((value) => value
 export const HttpStatusCodeSchema = yup.string().oneOf(HttpStatusCodeStrings).required();
 
 export type HttpStatusCodeSType = yup.InferType<typeof HttpStatusCodeSchema>;
-
-export default HttpStatusCode;
