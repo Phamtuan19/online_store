@@ -1,8 +1,8 @@
+import authService from '@Page/auth/service';
+import { RootState } from '@Redux/rootReducer';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { RootState } from '../rootReducer';
 import { useDispatch, useSelector } from 'react-redux';
-import authService from '@Page/auth/service';
 
 const actionRefreshToken = createAsyncThunk('auth/refreshToken', async () => {
    console.log('refresh token');

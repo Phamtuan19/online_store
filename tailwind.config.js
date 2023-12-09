@@ -17,7 +17,24 @@ export default {
          animation: {},
 
          //  css color config
-         colors: {},
+         colors: {
+            main: '#0858f7',
+
+            white: '#FFFFFF',
+            black: '#111111',
+
+            // color default project
+            'primary-main': '#0858f7',
+            'primary-dark': '#0b5ed7',
+
+            error: '#FF0000',
+            secondary: '#805dca',
+            warning: '#e2a03f',
+            info: '#2196f3',
+            success: '#26bf94',
+
+            gray: '#555555',
+         },
 
          //  css font family config
          fontFamily: {},

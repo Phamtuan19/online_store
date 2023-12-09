@@ -8,13 +8,13 @@ import svgr from 'vite-plugin-svgr';
 import dynamicImport from 'vite-plugin-dynamic-import';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
    const env = loadEnv(mode, process.cwd(), '');
 
    return {
       plugins: [checker({ typescript: false }), react(), dynamicImport(), svgr(), tsconfigPaths()],
       server: {
-         port: 5001,
+         port: 4001,
       },
       resolve: {
          alias: {
