@@ -17,6 +17,11 @@
       "validate": "npm-run-all lint type:check"
    },
    "dependencies": {
+      "@emotion/react": "^11.11.1",
+      "@emotion/styled": "^11.11.0",
+      "@mui/icons-material": "^5.14.19",
+      "@mui/material": "^5.14.20",
+      "@mui/styled-engine-sc": "6.0.0-alpha.7",
       "@reduxjs/toolkit": "^1.9.5",
       "@types/axios": "^0.14.0",
       "axios": "^1.5.0",
@@ -29,6 +34,7 @@
       "react-hook-form": "^7.46.1",
       "react-redux": "^8.1.2",
       "react-router-dom": "^6.16.0",
+      "styled-components": "^6.1.1",
       "vite-tsconfig-paths": "^4.2.1",
       "yup": "^1.3.2"
    },

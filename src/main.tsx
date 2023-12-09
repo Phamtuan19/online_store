@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Routers from './routes';
 
 import './styles/global.css';
+import { ThemeProvider } from '@mui/material';
+import theme from '@Core/Theme';
 
 const rootElement = document.getElementById('root');
 
@@ -17,7 +19,9 @@ if (rootElement !== null) {
       <React.StrictMode>
          <Provider store={store}>
             <BrowserRouter>
-               <Routers />
+               <ThemeProvider theme={theme}>
+                  <Routers />
+               </ThemeProvider>
             </BrowserRouter>
          </Provider>
       </React.StrictMode>,

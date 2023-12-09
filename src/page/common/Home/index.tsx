@@ -1,7 +1,9 @@
+import { Button } from '@mui/material';
+
 const Home = () => {
    return (
       <div className="px-10 py-10">
-         <button className="">hello</button>
+         <Button className="">hello</Button>
       </div>
    );
 };
