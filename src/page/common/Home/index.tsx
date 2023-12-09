@@ -1,13 +1,10 @@
-import { SvgIcon } from '@Core/helpers';
+import { Button } from '@mui/material';
 
 const Home = () => {
    return (
-      <>
-         <button>
-            hello
-            <SvgIcon name="react" />
-         </button>
-      </>
+      <div className="px-10 py-10">
+         <Button className="">hello</Button>
+      </div>
    );
 };
 

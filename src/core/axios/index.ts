@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import { AxiosResponseData } from './axios-type';
+import type { AxiosResponseData } from './axios-type';
 // import HttpStatusCode from '@Core/Configs/HttpStatusCode';
 // import { errorMessage } from '@Core/Helper/message';
 // import middleware from './Middleware';

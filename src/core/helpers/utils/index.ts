@@ -1,7 +1,5 @@
 export * from './loadable';
 
-export * from './cn';
-
 export * from './convert-to-slug';
 
 export * from './convert-to-kebab-case';
